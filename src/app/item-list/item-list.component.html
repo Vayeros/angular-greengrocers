@@ -1,0 +1,11 @@
+<select id="filter" #filterSelect (change)="filterItems()" [(ngModel)]="filter">
+    <option value="all">All</option>
+    <option value="fruit">Fruit</option>
+    <option value="vegetable">Vegetable</option>
+  </select>
+  
+  <ul class="store--item-list">
+    <app-item-item class="item-list" *ngFor="let item of filteredItems | async" [item]="item">
+    </app-item-item>
+  </ul>
+  
